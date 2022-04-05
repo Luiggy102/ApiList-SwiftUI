@@ -1,6 +1,6 @@
 # Api List
 
-A simple and fast project for parsing and showing a Json form an external endPont.
+A simple and fast project for parsing and showing a Json from an external endPont.
 
 Example:
 
