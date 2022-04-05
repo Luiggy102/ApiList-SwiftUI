@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    var viewModel: ViewModel = ViewModel()
+    @StateObject var viewModel: ViewModel = ViewModel()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-            .onAppear {
-                viewModel.getPokemons()
+        NavigationView {
+            Form {
+                ForEach(viewModel.pokemons, id: \.name) { pokemon in
+                    Text(pokemon.name)
+                }
             }
+            .navigationTitle("Pokemons")
+        }.onAppear {
+            viewModel.getPokemons()
+        }
     }
 }
 

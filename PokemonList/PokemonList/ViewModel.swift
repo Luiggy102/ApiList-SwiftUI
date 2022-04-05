@@ -29,7 +29,6 @@ struct PokemonDataModel: Decodable { let name, url: String }
 
 struct PokemonResponseDataModel: Decodable {
     let pokemons: [PokemonDataModel]
-    // Only put the case that we want to recive
     enum CodingKeys: String, CodingKey {
     case results
     }
@@ -39,7 +38,8 @@ struct PokemonResponseDataModel: Decodable {
     }
 }
 
-final class ViewModel {
+final class ViewModel: ObservableObject {
+    @Published var pokemons: [PokemonDataModel] = []
     func getPokemons() {
         let apiUrl = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151")
         let urlSession = URLSession.shared
@@ -49,6 +49,9 @@ final class ViewModel {
             let pokemonDataModel = try? JSONDecoder().decode(PokemonResponseDataModel.self, from: data)
             guard let pokemonDataModel = pokemonDataModel else { return }
             print(pokemonDataModel)
+            DispatchQueue.main.async {
+                self.pokemons = pokemonDataModel.pokemons
+            }
         }.resume()
     }
 }
