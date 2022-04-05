@@ -11,6 +11,7 @@
 		8406F64727FC7637005DF15E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406F64627FC7637005DF15E /* ContentView.swift */; };
 		8406F64927FC7637005DF15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8406F64827FC7637005DF15E /* Assets.xcassets */; };
 		8406F64C27FC7637005DF15E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8406F64B27FC7637005DF15E /* Preview Assets.xcassets */; };
+		8406F65327FC76AD005DF15E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406F65227FC76AD005DF15E /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		8406F64627FC7637005DF15E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8406F64827FC7637005DF15E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8406F64B27FC7637005DF15E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8406F65227FC76AD005DF15E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				8406F64427FC7637005DF15E /* PokemonListApp.swift */,
 				8406F64627FC7637005DF15E /* ContentView.swift */,
+				8406F65227FC76AD005DF15E /* ViewModel.swift */,
 				8406F64827FC7637005DF15E /* Assets.xcassets */,
 				8406F64A27FC7637005DF15E /* Preview Content */,
 			);
@@ -77,6 +80,7 @@
 				8406F63D27FC7637005DF15E /* Sources */,
 				8406F63E27FC7637005DF15E /* Frameworks */,
 				8406F63F27FC7637005DF15E /* Resources */,
+				8406F65427FC7709005DF15E /* Run SwiftLint andScript */,
 			);
 			buildRules = (
 			);
@@ -132,12 +136,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8406F65427FC7709005DF15E /* Run SwiftLint andScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint andScript";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8406F63D27FC7637005DF15E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8406F64727FC7637005DF15E /* ContentView.swift in Sources */,
+				8406F65327FC76AD005DF15E /* ViewModel.swift in Sources */,
 				8406F64527FC7637005DF15E /* PokemonListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
